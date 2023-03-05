@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export default function Footer({ contador }) {
-  return <FooterContainer>{contador}/4 CONCLUÍDOS</FooterContainer>;
+  return (
+    <FooterContainer data-test="footer">
+      {contador}/4 CONCLUÍDOS
+    </FooterContainer>
+  );
 }
 
 const FooterContainer = styled.div`

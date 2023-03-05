@@ -54,6 +54,7 @@ export default function Botoes({
   return (
     <BotoesContainer>
       <BotaoErrado
+        data-test="no-btn"
         onClick={() => {
           finalizarPerg();
           botaoErrado();
@@ -62,6 +63,7 @@ export default function Botoes({
         <span>Não lembrei</span>
       </BotaoErrado>
       <BotaoNeutro
+        data-test="partial-btn"
         onClick={() => {
           finalizarPerg();
           botaoNeutro();
@@ -70,6 +72,7 @@ export default function Botoes({
         <span>Quase não lembrei</span>
       </BotaoNeutro>
       <BotaoZap
+        data-test="zap-btn"
         onClick={() => {
           finalizarPerg();
           botaoZap();

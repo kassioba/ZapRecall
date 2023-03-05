@@ -48,17 +48,31 @@ export default function Perguntas({
     return "seta_play.png";
   }
 
+  function testeImg(i) {
+    if (cardRespondido.includes(`Pergunta ${i + 1} erro`)) {
+      return "no-icon";
+    } else if (cardRespondido.includes(`Pergunta ${i + 1} neutro`)) {
+      return "partial-icon";
+    } else if (cardRespondido.includes(`Pergunta ${i + 1} zap`)) {
+      return "zap-icon";
+    }
+
+    return "play-btn";
+  }
+
   return (
     <>
       {cards.map((card, index) => (
         <>
           <PerguntasContainer
+            data-test="flashcard"
             index={index}
             pergAbertas={pergAbertas}
             cardRespondido={cardRespondido}
           >
-            <p>Pergunta {index + 1}</p>
+            <p data-test="flashcard-text">Pergunta {index + 1}</p>
             <img
+              data-test={testeImg(index)}
               src={`./assets/${trocarImg(index)}`}
               alt=""
               onClick={() => onclick(index)}
@@ -70,8 +84,9 @@ export default function Perguntas({
             cardQuestion={card.question}
             cardVirados={cardVirados}
           >
-            <p>{card.question}</p>
+            <p data-test="flashcard-text">{card.question}</p>
             <img
+              data-test="turn-btn"
               src="./assets/seta_virar.png"
               alt=""
               onClick={() => setCardVirados([...cardVirados, card.question])}
@@ -81,7 +96,7 @@ export default function Perguntas({
             cardVirados={cardVirados}
             cardQuestion={card.question}
           >
-            <p>{card.answer}</p>
+            <p data-test="flashcard-text">{card.answer}</p>
             <Botoes
               pergAbertas={pergAbertas}
               setPergAbertas={setPergAbertas}
