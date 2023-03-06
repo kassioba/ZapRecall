@@ -23,7 +23,6 @@ export default function Perguntas({
 
   const [cardVirados, setCardVirados] = useState([]);
   const [cardRespondido, setCardRespondido] = useState([]);
-  // const [blockOnclick, setBlockOnclick] = useState();
 
   function onclick(i) {
     if (
