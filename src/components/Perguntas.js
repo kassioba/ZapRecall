@@ -79,6 +79,7 @@ export default function Perguntas({
             />
           </PerguntasContainer>
           <FlashcardFrente
+            data-test="flashcard"
             index={index}
             pergAbertas={pergAbertas}
             cardQuestion={card.question}
@@ -93,6 +94,7 @@ export default function Perguntas({
             />
           </FlashcardFrente>
           <FlashcardVerso
+            data-test="flashcard"
             cardVirados={cardVirados}
             cardQuestion={card.question}
           >
